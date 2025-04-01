@@ -1,0 +1,30 @@
+/* This file is used to import the fonts used in the project */
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash&family=Roboto:wght@100;300;400; 500; 700;900&display=swap');
+@import url('https://db.onlinewebfonts.com/c/3066b11123e63381b8e2aa554b18bf32?family=Bauhaus+93+V1');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #0d171f;
+    --secondary: rgba(140, 90, 250, 1);
+    --bgColor: #101014;
+  }
+
+  h1,
+  h2,
+  h4,
+  p{
+    color: #ffffff
+  }
+
+  body{
+    position: relative;
+    font-family: 'Roboto', sans-serif;	
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+  }
