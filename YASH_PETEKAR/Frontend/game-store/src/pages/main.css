@@ -1,0 +1,164 @@
+.main {
+    display: flex;
+    min-height: 100vh;
+    background: var(--bgColor);
+    position: relative;
+}
+
+.mainContent {
+    flex: 1;
+    margin-left: 80px;
+    padding: 15px;
+    transition: margin-left 0.3s ease;
+    min-height: 100vh;
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
+/* When side menu is hovered, adjust main content margin */
+.sideMenu:hover + .mainContent {
+    margin-left: 280px;
+}
+
+#home,
+#categories,
+#library {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: none;
+}
+
+#home.active,
+#categories.active,
+#library.active {
+    opacity: 1;
+    display: block;
+}
+
+main{  
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px;
+    border: 8px solid var(--bgColor);
+    background: var(--bgColor);
+    box-shadow: -5px 5px 15px rgba(255, 255, 255, 0.15), 5px 5px 15px rgba(0, 0, 0, 0.35),
+        inset -5px 5px 15px rgba(255, 255, 255, 0.15),
+        inset 5px 5px 15px rgba(0, 0, 0, 0.35);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.banner {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: var(--bgColor);
+    box-shadow: -5px 5px 15px rgba(255, 255, 255, 0.1), 
+        5px 5px 15px rgba(0, 0, 0, 0.35);
+    transition: 1s;
+    overflow-y: auto; /* Enables vertical scrolling */
+    scrollbar-width: none;
+
+}
+
+.banner.active {
+    position:relative;
+    width: 93%;
+    transition: 1s;
+}
+
+.section-content {
+    height: auto;
+    padding: 15px 0;
+}
+
+/* Ensure content sections are scrollable */
+.section-content .container-fluid {
+    padding: 0 15px;
+}
+
+.section-content .row {
+    margin-bottom: 20px;
+}
+
+.section-content .row:last-child {
+    margin-bottom: 0;
+}
+
+section {
+    display: none;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 0 30px 0 30px;
+    bottom: 0;
+    opacity: 0;
+    transform-origin: bottom;
+    z-index: 1000;  
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+section::-webkit-scrollbar {
+    display: none;
+}
+
+section.active {
+    display: block;
+    top: 100px;
+    height: auto;
+    overflow: visible;
+    opacity: 1;
+    transform: translateY(0);    /* Move to original position */
+
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 12px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bgColor);
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(transparent, var(--secondary));
+    border-radius: 10px;
+    border: 2px solid var(--bgColor);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(transparent, var(--primary));
+    box-shadow: 0 0 10px var(--secondary);
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary) var(--bgColor);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    background: var(--bgColor);
+}
